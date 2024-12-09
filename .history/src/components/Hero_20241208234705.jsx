@@ -6,7 +6,7 @@ import { logobig } from "../assets";
 
 const Hero = () => {
   return (
-    <section id="home" className={`flex flex-col ${styles.paddingY} ${styles.flexCenter} h-1/2`}>
+    <section id="home" className={`flex flex-col ${styles.paddingY} ${styles.flexCenter} h-screen`}>
       <div className={`header__circle-1`}></div>
       <div className={`header__circle header__circle-2`}></div>
       {/* <img src={logobig} alt="logobig" className={clsx("w-[400px] h-auto",  "floatAnimation")} /> */}

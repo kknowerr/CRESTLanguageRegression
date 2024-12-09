@@ -1,8 +1,7 @@
 // InputForm.jsx
 import React, { useState } from "react";
-import { the_greater_function, get_tuples, reconstructPhones } from "../LinguisticRec"; // Adjust this path as needed
+import { the_greater_function, get_tuples, reconstructPhones } from "../LinguisticRec"; // Adjust path as needed
 import styles from "../style";
-import Output from "./Output"; // Make sure the path is correct where you placed Output.jsx
 
 const InputForm = () => {
   const [word1, setWord1] = useState("");
@@ -11,8 +10,7 @@ const InputForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Run the logic using the JavaScript functions
+    // Run the logic here using the JavaScript functions
     const [string1, string2] = the_greater_function(word1, word2);
     let tupleList = get_tuples(string1, string2);
 
@@ -34,22 +32,27 @@ const InputForm = () => {
             type="text"
             value={word1}
             onChange={(e) => setWord1(e.target.value)}
-            placeholder="Enter first word"
+            placeholder="Enter first text"
             className="w-full p-10 mb-4 border border-gray-300 rounded-md"
           />
           <input
             type="text"
             value={word2}
             onChange={(e) => setWord2(e.target.value)}
-            placeholder="Enter second word"
+            placeholder="Enter second text"
             className="w-full p-10 mb-4 border border-gray-300 rounded-md"
           />
           <button type="submit" className="w-full p-4 bg-orange-500 text-white rounded-md">
             Reconstruct
           </button>
         </form>
-        
-        {result && <Output result={result} />}
+
+        {result && (
+          <div className="mt-5">
+            <h3 className="font-bold">Reconstruction Result:</h3>
+            <p>{result}</p>
+          </div>
+        )}
       </div>
     </section>
   );

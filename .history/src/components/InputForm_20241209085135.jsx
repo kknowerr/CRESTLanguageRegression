@@ -25,7 +25,7 @@ const InputForm = () => {
 
   return (
     <section id="input-form" className={`${styles.paddingY} ${styles.flexCenter}`}>
-      <div className="flex flex-col items-center w-full max-w-[500px]">
+      <div className="flex flex-col items-center w-full max-w-[500px]`>
         <h2 className="font-visuletpro font-semibold text-[32px] text-black leading-[40px] text-center mb-5">
           Enter Words to Compare
         </h2>
