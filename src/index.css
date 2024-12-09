@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --Jet: #363636;
+  --Gunmetal: #242f40;
+  --Satin-sheen-gold: #cca43b;
+  --Ecru: #d9c590;
+  --Platinum: #e5e5e5;
+  --White: #ffffff;
+  --OffWhite: #f9f9f9;
+  --Blue: #ef4e2a;
+  --Darkblue: #a03e1d;
+  --black-gradient: linear-gradient(
+    144.39deg,
+    var(--White) -278.56%,
+    var(--Jet) -78.47%,
+    var(--Gunmetal) 91.61%
+  );
+  --card-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+.text-gradient {
+  background: radial-gradient(
+    64.18% 64.18% at 71.16% 35.69%,
+    #363636 0.89%,
+    #402a24 17.23%,
+    #84543d 42.04%,
+    #7d4a21 55.12%,
+    #785017 71.54%,
+    #a53e0a 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.bg-black-gradient {
+  background: linear-gradient(
+    144.39deg,
+    var(--White) -278.56%,
+    var(--Jet) -78.47%,
+    var(--Gunmetal) 91.61%
+  );
+}
+
+.bg-black-gradient-2 {
+  background: linear-gradient(
+    -168.39deg,
+    var(--White) -278.56%,
+    var(--Jet) -78.47%,
+    var(--Gunmetal) 91.61%
+  );
+}
+
+.bg-discount-gradient {
+  background: linear-gradient(125.17deg, var(--Jet) 0%, var(--Gunmetal) 100%);
+}
+
+.box-shadow {
+  box-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
+}
+
+.sidebar {
+  -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.feature-card:hover {
+  background: var(--black-gradient);
+  box-shadow: var(--card-shadow);
+}
+
+.feedback-container .feedback-card:last-child {
+  margin-right: 0px;
+}
+
+.feedback-card {
+  background: transparent;
+}
+
+.feedback-card:hover {
+  background: var(--black-gradient);
+}
+
+.blue-gradient {
+  background: linear-gradient(180deg, rgba(188, 165, 255, 0) 0%, var(--Gunmetal) 100%);
+  filter: blur(123px);
+}
+
+.pink-gradient {
+  background: linear-gradient(90deg, var(--Ecru) 0%, var(--Satin-sheen-gold) 100%);
+  filter: blur(900px);
+}
+
+.white-gradient {
+  background: rgba(var(--White), 0.6);
+  filter: blur(750px);
+}
+
+.offwhite-gradient {
+  background: rgba(var(--OffWhite), 0.6);
+  filter: blur(750px);
+}
+
+.grey-gradient {
+  background: rgba(var(--Jet), 0.6);
+  filter: blur(750px);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes float {
+0% {
+  transform: translateY(0px);
+}
+50% {
+  transform: translateY(-20px);
+}
+100% {
+  transform: translateY(0px);
+}
+}
+
+.floatAnimation {
+  animation: float 2s ease-in-out infinite;
+}
+
+.header__img-clip {
+  width: 400px;
+  height: 130px;
+  background: url(./assets/logobig.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  clip: rect(400px 200px 100px 0);
+  animation: float 3s ease infinite
+}
+
+
+@keyframes colorChange {
+  0% { color: #363636; } /* Initial color */
+  20% { color: #ff7f50; } /* Coral */
+  40% { color: #ffa500; } /* Orange */
+  60% { color: #ffcc00; } /* Bright yellow/orange */
+  80% { color: #ff8c00; } /* Dark orange */
+  100% { color: #363636; } /* Back to initial color */
+}
+
+.colorChange {
+animation: colorChange 10s linear infinite;
+}
+
+revealer,.revealer-intro {
+  display: inline-block
+}
+
+.revealer {
+  visibility: hidden
+}
+
+.revealer-scale {
+  transform: scale(1.1)
+}
+
+.block-revealer,.revealer-monitor {
+  display: inline-block
+}
+
+.block-revealer {
+  overflow: hidden;
+  position: relative
+}
+
+.block-revealer__element {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10!important
+}
+
+.block-revealer__content {
+  height: 100%
+}
+
+.header__circle-1,.header__circle-2 {
+  width: 450px;
+  height: 450px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transform: scale(0);
+  z-index: 2
+}
+
+.header__circle-2 {
+  z-index: 1
+}
+
+
+@font-face {
+  font-family: 'VisueltPro';
+  src: url('assets/Fonts/Visuelt/VisueltPro-Normal.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+    font-family: 'VisueltPro';
+    src: url('assets/Fonts/Visuelt/VisueltPro-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'VisueltPro';
+    src: url('assets/Fonts/Visuelt/VisueltPro-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'VisueltPro';
+    src: url(assets/Fonts/Visuelt/VisueltPro-BoldItalic.ttf) format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'VisueltPro';
+    src: url(assets/Fonts/Visuelt/VisueltPro-BlackItalic.ttf) format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'VisueltPro';
+    src: url(assets/Fonts/Visuelt/VisueltPro-Italic.ttf) format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'VisueltPro';
+    src: url(assets/Fonts/Visuelt/VisueltPro-Thin.ttf) format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'VisueltPro';
+    src: url(assets/Fonts/Visuelt/VisueltPro-ThinItalic.ttf) format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'VisueltPro';
+    src: url(assets/Fonts/Visuelt/VisueltPro-ExtraLightItalic.ttf) format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'VisueltPro';
+    src: url(assets/Fonts/Visuelt/VisueltPro-ExtraLightItalic.ttf) format('truetype');
+    font-weight: 200;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'VisueltPro';
+    src: url(assets/Fonts/Visuelt/VisueltPro-Light.ttf) format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'VisueltPro';
+    src: url(assets/Fonts/Visuelt/VisueltPro-LightItalic.ttf) format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'VisueltPro';
+    src: url(assets/Fonts/Visuelt/VisueltPro-Medium.ttf) format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'VisueltPro';
+    src: url(assets/Fonts/Visuelt/VisueltPro-MediumItalic.ttf) format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--Jet); /* assuming Jet is your primary text color */
+  background-color: var(--White); /* assuming White is your primary background color */
+}
+
+h1, h2, h3 {
+  font-family: 'VisueltPro', sans-serif;
+  color: var(--Gunmetal); /* assuming Gunmetal is your headings color */
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+em {
+  font-style: italic;
+}
+
+strong em, em strong {
+  font-weight: 700;
+  font-style: italic;
+}
