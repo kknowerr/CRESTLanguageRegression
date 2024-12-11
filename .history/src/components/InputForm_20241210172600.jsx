@@ -1,26 +1,18 @@
-// InputForm.jsx
 import React, { useState } from "react";
-import { the_greater_function, get_tuples, reconstructPhones } from "../LinguisticRec"; // Adjust this path as needed
+import { the_greater_function, get_tuples, reconstructPhones } from "../LinguisticRec";
 import styles from "../style";
-import Output from "./Output"; // Make sure the path is correct where you placed Output.jsx
 
-const InputForm = () => {
+const InputForm = ({ onResult }) => {
   const [word1, setWord1] = useState("");
   const [word2, setWord2] = useState("");
-  const [result, setResult] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Run the logic using the JavaScript functions
     const [string1, string2] = the_greater_function(word1, word2);
     let tupleList = get_tuples(string1, string2);
-
-    // Remove tuples that are both '0'
     tupleList = tupleList.filter(t => !(t[0] === '0' && t[1] === '0'));
-
     const recPhones = reconstructPhones(tupleList);
-    setResult(recPhones.join(''));
+    onResult(recPhones.join(''));
   };
 
   return (
@@ -48,8 +40,6 @@ const InputForm = () => {
             Reconstruct
           </button>
         </form>
-        
-        {result && <Output result={result} />}
       </div>
     </section>
   );
