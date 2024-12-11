@@ -22,6 +22,7 @@ const App = () => {
       <div className={`bg-primary ${styles.paddingX} ${styles.flexCenter}`}>
         <div className={`${styles.boxWidth}`}>
           <InputForm onResult={setResult} />
+          <Output result={result} />
           <Footer />
         </div>
       </div>
