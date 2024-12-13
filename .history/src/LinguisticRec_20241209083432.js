@@ -224,28 +224,8 @@ function reconstructPhones(tupleList) {
   return recPhones;
 }
 
-// New function to handle comma-separated lists
-// If either input string contains commas, it will split them into arrays.
-// It will run the_greater_function on each pair of words and return the results as an array of pairs.
-function processWords(word1, word2) {
-  const words1 = word1.split(',').map(w => w.trim());
-  const words2 = word2.split(',').map(w => w.trim());
-
-  const length = Math.max(words1.length, words2.length);
-  const results = [];
-  for (let i = 0; i < length; i++) {
-    const w1 = words1[i] || "";
-    const w2 = words2[i] || "";
-    const [final1, final2] = the_greater_function(w1, w2);
-    results.push([final1, final2]);
-  }
-
-  return results;
-}
-
 export {
   the_greater_function,
   get_tuples,
-  reconstructPhones,
-  processWords
+  reconstructPhones
 };
